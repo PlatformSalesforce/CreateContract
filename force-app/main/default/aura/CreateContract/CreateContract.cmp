@@ -1,0 +1,70 @@
+<aura:component controller="CreateContractAPI" implements="force:hasRecordId,force:lightningQuickActionWithoutHeader" >
+<!---style-->
+    <aura:html tag="style">
+        .slds-p-around–medium {
+        padding: 0rem !important;
+        }
+        .slds-modal__content{
+        overflow-y:hidden !important;
+        height:unset !important;
+        max-height:unset !important;
+        }
+        .cuf-content {
+        padding: 0 0rem !important;
+        }
+    </aura:html>
+<!---style-->
+<!---Header-->
+    <div class="modal-header slds-modal__header slds-size_1-of-1">
+		<div class="slds-text-heading_medium">Create</div>
+	</div>
+<!--Header-->
+<!--Body-->    
+    <aura:attribute name="msg" type="String" />
+    <aura:attribute name="variable1" type="boolean" default="false"/>
+    <aura:attribute name="conVisible" type="boolean" default="false"/>
+    <aura:attribute name="options" type="List" default="[
+                {'label': 'New Contract and New Contracting Entity', 'value': 'option1'},
+                {'label': 'New Contract', 'value': 'option2'},
+                {'label': 'New Contracting Entity', 'value': 'option3'}
+                ]"/>
+    <aura:attribute name="value" type="String" default = "option1" />
+    <aura:attribute name="ContactList" type="Contact[]" />
+    <aura:attribute name="selectedValue" type="String"/>
+    <aura:attribute name="notes" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+    
+    <div class="slds-p-around_small">
+        <lightning:radioGroup name="radioGroup"
+                              label=""
+                              options="{! v.options }"
+                              value="{! v.value }"
+                              type="radio"
+                              onchange="{! c.handleChange }"/>
+        
+    </div>
+    
+    <div class = "slds-size_1-of-2 slds-p-around_small slds-p-left_x-small " >
+            <lightning:select name="select" label="Select Contact" messageWhenValueMissing = "Required" required="true" value="{!v.selectedValue}">
+                <option value="None" Label = "None"></option>
+                <aura:iteration items="{!v.ContactList}" var="con">
+                    <option value="{!con.value}" text="{!con.label}"></option>
+                </aura:iteration>
+            </lightning:select>
+     </div> 
+    <div class = "slds-size_1-of-2 slds-p-around_small slds-p-left_x-small">
+  		<lightning:textarea name="input1" label="Notes" value = "{!v.notes}"/>
+	</div>
+    <aura:if isTrue="{!v.variable1}">
+     <div style="background-color:white">
+        <b>The Contract is successfully created with contractRequestQueueId as {!v.msg} </b>
+     </div>
+    </aura:if>
+<!--Body-->     
+<!--footer--> 
+    <div class="modal-footer slds-modal__footer slds-size_1-of-1">
+    	<lightning:button variant="Brand" class="slds-button" label="Create" onclick="{!c.handleClick}"/>
+    	<lightning:button variant="Neutral" class="slds-button" label="Cancel" onclick="{!c.handleExit}"/>
+    </div>
+<!--footer-->   
+</aura:component>

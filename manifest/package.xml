@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Contract_api__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Account.Contracting_Entity_Id__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Contract_api__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>API_KEY</members>
+        <members>API_URL</members>
+        <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>Account.Create</members>  
+        <name>QuickAction</name>
+    </types>
+    <types>
+        <members>JSON2Apex</members>
+        <members>CreateContractAPI</members>
+        <members>ContractManager</members>
+        <name>Apexclass</name>
+    </types>
+    <types>
+        <members>CreateContract</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+    <types>
+        <members>CreateContract</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Account-Account Layout</members>
+        <members>Contract_api__c-Contract Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Account_Record_Page1</members>
+        <name>FlexiPage</name>
+    </types>
+   
+    <types>
+        <members>Contract_api__c.All</members>
+        <name>ListView</name>
+    </types>  
+    <types>
+        <members>Contract_api__c.Update</members>
+        <name>WebLink</name>
+    </types>
+    <types>
+        <members>updateContractVF</members>
+        <name>ApexPage</name>
+    </types>
+    <!--types>
+        <members>Admin</members>
+        <name>Profile</name>
+    </types-->
+    <types>
+        <members>standard__LightningSales</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>accountAPI</members>
+        <name>ConnectedApp</name>
+    </types>
+    <types>
+        <members>API_Mapper__mdt</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</​members>
+        <name>CustomMetadata</name>
+    </types>
+    <version>54.0</version>
+    <!--every time retrieve package from platform do contract object gender remove, 
+    change application standard__LightningSales.app-meta  to new file new 19 from notepad for flexi page over ride-->
+    <!--assign permission to profile manulay to apex- class, vf pages,give fls to fields in contract-->
+    <!-- ,contract tab create - DONE and , - DONE list view all is 2 time
+    
+    add to nav-->
+</Package>
