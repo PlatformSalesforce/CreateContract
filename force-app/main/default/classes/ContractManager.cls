@@ -15,7 +15,7 @@ global with sharing class ContractManager {
     
     
     @HttpPatch
-    global static void updateContractFields() {
+    global static void   updateContractFields() {
     
         RestRequest request = RestContext.request;
         list<Contract_api__c> thisConrt = new list<Contract_api__c>();
